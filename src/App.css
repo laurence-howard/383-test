@@ -1,33 +1,131 @@
-.App {
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+a, a:visited {
+  color: #fd4e4e;
+  transition: all 300ms ease-in;
+}
+
+a:hover {
+  color: #cc4141;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.content-outer{
+  margin: 40px 0;
+}
+
+/* Masonary grid */
+
+.masonry-grid-outer {
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: flex;
+  margin-left: -30px; 
+  width: auto;
+}
+.masonry-grid-outer_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+.masonry-grid-outer_column > div { 
+  margin-bottom: 30px;
+}
+
+.twitter-title, .instagram-username{
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.manual-image, .instagram-image{
+  margin-bottom: 15px;
+}
+
+.posts-container {
+  overflow: visible !important;
+}
+
+.posts-container-outer {
+  padding: 20px 0;
+}
+
+/* Grid Content */
+
+.grid-content {
+  padding:30px 15px;
+  border: 1px solid #e1e1e1;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 5px #dbdbdb;
+  position: relative;
+}
+
+.grid-badge {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  top: -5px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.grid-badge-icon {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat;
+}
+
+.grid-badge-icon.twitter-icon {
+  background-image: url('/icons/twitter-logo-silhouette.svg')
+}
+.grid-badge-icon.instagram-icon {
+  background-image: url('/icons/instagram.svg')
+}
+
+.grid-badge-icon.manual-icon {
+  color: white;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.filter-button, .load-more-button {
+  border: none;
+  background-color: #fd4e4e;
+  color: white;
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 4px 8px;
+  min-width: 60px;
+}
+
+.button-container{
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.filter-button.active {
+  background-color: #cc4141;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filter-container{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
