@@ -3,6 +3,10 @@ import Manual from '../Grid/Manual';
 import Twitter from '../Grid/Twitter';
 import Instagram from '../Grid/Instagram';
 import Shuffle from 'shufflejs';
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 class Content extends React.Component {
@@ -74,10 +78,36 @@ class Content extends React.Component {
             </button>
             )
         }
+
+        var slickSettings = {
+            autoplay : true,
+            autoplaySpeed : 4000,
+            slidesToShow : 1,
+            slidesToScroll : 1
+        }
         
         return (
             <div className="content-outer">
                 <div className="container">
+                    <div className="header-slider-container">
+                        <Slider {...slickSettings}>
+                            <div className="header-slider-single">
+                                <div className="header-single-inner" style={{backgroundImage : 'url(/images/bull.jpg)'}}></div>
+                            </div>
+                            <div className="header-slider-single">
+                                <div className="header-single-inner" style={{backgroundImage : 'url(/images/newyearbull.jpg)'}}></div>
+                            </div>
+                            <div className="header-slider-single">
+                                <div className="header-single-inner" style={{backgroundImage : 'url(/images/reindeerbull.jpg)'}}></div>
+                            </div>
+                            <div className="header-slider-single">
+                                <div className="header-single-inner" style={{backgroundImage : 'url(/images/rockybull.jpg)'}}></div>
+                            </div>
+                            <div className="header-slider-single">
+                                <div className="header-single-inner" style={{backgroundImage : 'url(/images/ukbull.jpg)'}}></div>
+                            </div>
+                        </Slider>
+                    </div>
                     <div className="filter-container">
                         <button className={"filter-button " + (this.state.filter == 'all' ? 'active' : '')} onClick={() => this.filterClick('all')}>All</button>
                         <button className={"filter-button " + (this.state.filter == 'twitter' ? 'active' : '')} onClick={() => this.filterClick('twitter')}>Twitter</button>

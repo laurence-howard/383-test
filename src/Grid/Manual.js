@@ -9,7 +9,7 @@ class Manual extends React.Component {
     }
 
     addDefaultSrc(ev){
-        ev.target.src = '/backupImg/bullring.jpg';
+        ev.target.src = '/images/bullring.jpg';
         this.props.imageShuffle();
       }
 

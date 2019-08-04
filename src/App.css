@@ -129,3 +129,20 @@ img {
   align-items: center;
   justify-content: center;
 }
+
+.header-slider-single{
+  height: 100px;
+  width: 100%;
+  min-height: 250px;
+}
+
+.header-single-inner{
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header-slider-container{
+  margin-bottom: 15px;
+}
