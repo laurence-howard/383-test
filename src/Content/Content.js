@@ -146,7 +146,7 @@ class Content extends React.Component {
     }
 
     getPosts = (shuffle) => {
-        fetch('http://private-cc77e-aff.apiary-mock.com/posts?page=' + this.state.pageNum + '&postsnum=' + this.state.postsNum)
+        fetch('https://private-cc77e-aff.apiary-mock.com/posts?page=' + this.state.pageNum + '&postsnum=' + this.state.postsNum)
             .then(res => res.json())
             .then(data => postSort(data.items))
             .then(data => this.postAdd(data, shuffle))
