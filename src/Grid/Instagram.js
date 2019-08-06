@@ -14,7 +14,7 @@ class Instagram extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        if(prevState.thumb_url != this.state.thumb_url){
+        if(prevState.thumb_url !== this.state.thumb_url){
             setTimeout(
                 function() {
                     this.props.imageShuffle()                    
@@ -27,14 +27,12 @@ class Instagram extends React.Component {
 
     render(){
 
-        var content;
-
         if(this.props.data && this.state.thumb_url){
             return (
                 <div className="grid-content instagram-content">
                     <div className="grid-badge"><div className="grid-badge-icon instagram-icon"></div></div>                    
                     <div className="instagram-image">
-                        <img src={this.state.thumb_url}  loading='auto' />
+                        <img src={this.state.thumb_url}  loading='auto' alt="Autumn Fashion Fix Instagram Post"/>
                     </div>
                     <div className="instagram-content">
                         <h5 className="instagram-username">{this.props.data.item_data.user.username}</h5>
@@ -46,9 +44,9 @@ class Instagram extends React.Component {
         }
 
         return (
-            <div>
-            Loading
-        </div>
+            <div class="spinner-border spinner-outer" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
         )
     }
 }

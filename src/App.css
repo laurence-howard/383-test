@@ -146,3 +146,8 @@ img {
 .header-slider-container{
   margin-bottom: 15px;
 }
+
+.spinner-outer{
+  margin: 10px auto;
+  display: block;
+}

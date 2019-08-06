@@ -15,28 +15,24 @@ class Manual extends React.Component {
 
     render(){
 
-        var content;
-
-
-
         if(this.props.data){
             return (
                 <div className="grid-content manual-content">
                     <div className="grid-badge"><div className="grid-badge-icon manual-icon">AFF</div></div>                    
                     <div className="manual-image-container">
-                        <img onError={this.addDefaultSrc} src={this.props.data.item_data.image_url} crossOrigin="anonymous" className="manual-image" loading='auto'/>
+                        <img onError={this.addDefaultSrc} src={this.props.data.item_data.image_url} crossOrigin="anonymous" className="manual-image" loading='auto' alt="Autumn Fashion Fix"/>
                     </div>
                     <div className="manual-text">
                         <p>{this.props.data.item_data.text}</p>
-                        <a href={this.props.data.item_data.link} target="_blank">{this.props.data.item_data.link_text}</a>
+                        <a href={this.props.data.item_data.link} target="_blank" rel="noopener noreferrer">{this.props.data.item_data.link_text}</a>
                     </div>
                 </div>
             )
         }
 
         return (
-            <div>
-                Loading
+            <div class="spinner-border spinner-outer" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         )
     }

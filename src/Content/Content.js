@@ -32,7 +32,7 @@ class Content extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        if(prevState.posts != this.state.posts){
+        if(prevState.posts !== this.state.posts){
             this.shuffle.resetItems();
         }
     }
@@ -44,21 +44,21 @@ class Content extends React.Component {
 
         if(this.state.posts && this.shuffle ){
             grid_content = this.state.posts.map(function(single){
-                if(single.service_name == 'Twitter'){
+                if(single.service_name === 'Twitter'){
                     return(
-                        <div className={grid_options + " single-outer"} data-group={"["+ single.service_slug +"]'"}>
+                        <div className={grid_options + " single-outer"} data-group={"["+ single.service_slug +"]'"} key={single.item_id}>
                             <Twitter data={single} />                            
                         </div>
                     )
-                } else if (single.service_name == 'Instagram'){
+                } else if (single.service_name === 'Instagram'){
                     return(
-                        <div className={grid_options + " single-outer"} data-group={"["+ single.service_slug +"]'"}>
+                        <div className={grid_options + " single-outer"} data-group={"["+ single.service_slug +"]'"} key={single.item_id}>
                             <Instagram imageShuffle={self.shuffleUpdate} data={single} />                            
                         </div>
                     )
                 } else {
                     return(
-                        <div className={grid_options + " single-outer"} data-group={"'["+ single.service_slug +"]'"}>
+                        <div className={grid_options + " single-outer"} data-group={"'["+ single.service_slug +"]'"} key={single.item_id}>
                             <Manual imageShuffle={self.shuffleUpdate} data={single} />                            
                         </div>
                     )
@@ -109,10 +109,10 @@ class Content extends React.Component {
                         </Slider>
                     </div>
                     <div className="filter-container">
-                        <button className={"filter-button " + (this.state.filter == 'all' ? 'active' : '')} onClick={() => this.filterClick('all')}>All</button>
-                        <button className={"filter-button " + (this.state.filter == 'twitter' ? 'active' : '')} onClick={() => this.filterClick('twitter')}>Twitter</button>
-                        <button className={"filter-button " + (this.state.filter == 'manual' ? 'active' : '')} onClick={() => this.filterClick('manual')}>Posts</button>
-                        <button className={"filter-button " + (this.state.filter == 'instagram' ? 'active' : '')} onClick={() => this.filterClick('instagram')}>Instagram</button>
+                        <button className={"filter-button " + (this.state.filter === 'all' ? 'active' : '')} onClick={() => this.filterClick('all')}>All</button>
+                        <button className={"filter-button " + (this.state.filter === 'twitter' ? 'active' : '')} onClick={() => this.filterClick('twitter')}>Twitter</button>
+                        <button className={"filter-button " + (this.state.filter === 'manual' ? 'active' : '')} onClick={() => this.filterClick('manual')}>Posts</button>
+                        <button className={"filter-button " + (this.state.filter === 'instagram' ? 'active' : '')} onClick={() => this.filterClick('instagram')}>Instagram</button>
                     </div>
                     <div className="posts-container-outer">
                         <div className="posts-container row" ref={this.element}>
@@ -156,8 +156,7 @@ class Content extends React.Component {
                         function() {
                             shuffle.resetItems();
                             console.log('getposts');                    
-                        }
-                        .bind(this),
+                        },
                         500
                     );
                 }

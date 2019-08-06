@@ -9,14 +9,11 @@ class Twitter extends React.Component {
     }
 
     render(){
-
-        var content;
-
         if(this.props.data.item_data){
             return (
                 <div className="grid-content twitter-content text-center">
                     <div className="grid-badge"><div className="grid-badge-icon twitter-icon"></div></div>
-                    <h4 class="twitter-title">{this.props.data.item_data.user.username}</h4>
+                    <h4 className="twitter-title">{this.props.data.item_data.user.username}</h4>
                     <div className="tweet-content" dangerouslySetInnerHTML={{__html : this.twitterLinkSort(this.props.data.item_data.tweet)}}>
                     </div>
                 </div>
@@ -24,8 +21,8 @@ class Twitter extends React.Component {
         }
 
         return (
-            <div>
-                Loading
+            <div class="spinner-border spinner-outer" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         )
     }
